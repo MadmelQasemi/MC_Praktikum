@@ -32,18 +32,16 @@
 #define NUM_SAMPLES 800 // Anzahl der Messwerte
 #define delay 2
 #define SAMPLE_RATE 1/(delay/1000000)
-unsigned int ADCValues_PE2[NUM_SAMPLES];
-unsigned int ADCValues_PE3[NUM_SAMPLES]; // Array zur Speicherung der Messwerte
-unsigned int TauValue_PE1; // Tau-Wert von PE1
+
 typedef struct {
     double amplitude;
     double frequency;
 } SignalProperties;
 
+void initialize_adc();
 void delay_us(uint32_t us);
 void delay_ms(uint32_t ms);
 void analyze_signal(const unsigned int *data, unsigned int tauValue, SignalProperties *result);
-void initialize_adc();
 
 
 #endif /* ADC_H_ */
